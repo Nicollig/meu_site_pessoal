@@ -1,0 +1,292 @@
+/* Estilos Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primaria: blue;
+    --secundaria: gray;
+    --escuro: black;
+    --claro: #ffffff;
+}
+
+body {
+    background-color: var(--escuro);
+    color: var(--secundaria);
+    padding-top: 80px;
+    /* espaço para a navbar fixa */
+}
+
+/* Navegação */
+.Navegacao {
+    position: fixed;
+    top: 0;
+    background-color: rgba(15, 23, 42, 0.8);
+    width: 100%;
+    z-index: 100;
+    padding: 1.5rem 0;
+}
+
+.Menu {
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+    justify-content: center;
+}
+
+.Menu-link {
+    text-decoration: none;
+    color: var(--primaria);
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.Menu-link::before {
+    content: '';
+    height: 2px;
+    width: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, var(--claro), var(--primaria));
+    transition: width 0.5s ease;
+}
+
+.Menu-link:hover::before {
+    width: 100%;
+}
+
+/* Imagem de Perfil */
+.foto-perfil {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    box-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
+    border-radius: 50%;
+    border: 4px solid var(--claro);
+    display: block;
+    margin: 2rem auto;
+    animation: flutuar 5s ease-in-out infinite;
+}
+
+/* Cabeçalho */
+.Cabecalho {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3.5rem;
+    color: var(--primaria);
+    font-weight: bold;
+    margin: 20px;
+}
+
+.Cabecalho-subtitulo {
+    font-size: 2rem;
+    color: #ffffff;
+}
+
+/* Sobre Mim */
+.SobreMim {
+    padding: 6rem 2rem;
+}
+
+.Sobre-titulo {
+    font-size: 3rem;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.Sobre-caixa {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 16px;
+    border: 1px solid var(--secundaria);
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.Sobre-paragrafo {
+    text-align: center;
+    font-size: 1.25rem;
+    color: #000;
+    line-height: 1.6;
+}
+
+/* Skills */
+.Skills {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.Skill-box {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--secundaria);
+    text-align: center;
+    font-size: 1.25rem;
+    margin: 0.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Skill-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(79, 70, 229, 0.3);
+}
+
+/* Projetos */
+.Projetos {
+    padding: 6rem 2rem;
+}
+
+.Projeto-caixa {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.Projeto-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    backdrop-filter: 10px;
+    border: 1px solid var(--claro);
+    overflow: hidden;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.Projetos-titulos {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.Projeto-card:hover {
+    box-shadow: 0 10px 20px rgba(15, 23, 42, 0.2);
+    transform: translateY(-10px) scale(1.03);
+}
+
+.Projeto-imagem {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.Caixa-textos-projetos {
+    padding: 1.5rem;
+}
+
+.Info-projetos {
+    color: #ffffff;
+    line-height: 1.25rem;
+}
+
+.Paragrafo-projeto {
+    margin-bottom: 5px;
+}
+
+/* Contato */
+.Contatos {
+    padding: 6rem 2rem;
+}
+
+.Contatos-titulo {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.Formulario-contatos {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    padding: 2rem;
+    border: 1px solid var(--claro);
+    border-radius: 16px;
+}
+
+.Campo-form {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    color: var(--claro);
+    border: 1px solid var(--claro);
+    outline: none;
+}
+
+.Campo-form:focus {
+    border-color: var(--secundaria);
+    box-shadow: 0 0 10px var(--secundaria);
+}
+
+.Grupo-form {
+    margin-bottom: 1.5rem;
+}
+
+.Botao-form {
+    color: var(--escuro);
+    background: linear-gradient(45deg, var(--escuro), var(--secundaria));
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    transition: all 0.5s ease;
+}
+
+.Botao-form:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px rgba(79, 70, 229, 0.4);
+}
+
+/* Partículas de Fundo */
+.Particulas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.5;
+    background:
+        radial-gradient(circle at 10% 20%, var(--primaria) 0, transparent 20%),
+        radial-gradient(circle at 90% 80%, var(--secundaria) 0, transparent 20%),
+        var(--escuro);
+}
+
+@keyframes flutuar {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: rotateY(-20deg);
+    }
+}

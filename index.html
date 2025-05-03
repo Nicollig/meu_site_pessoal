@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nicólli Gomes</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="Particulas"></div>
+
+    <nav class="Navegacao">
+        <ul class="Menu">
+            <li><a href="#Inicio" class="Menu-link">Início</a></li>
+            <li><a href="#SobreMim" class="Menu-link">Sobre Mim</a></li>
+            <li><a href="#Skills" class="Menu-link">Skills</a></li>
+            <li><a href="#Projetos" class="Menu-link">Projetos</a></li>
+            <li><a href="#Contatos" class="Menu-link">Contato</a></li>
+        </ul>
+    </nav>
+
+    <main id="Inicio" class="Cabecalho">
+        <img src="./img/Nicolli.JPG.jpg" alt="Foto de Nicólli Gomes de Ramos" class="foto-perfil" />
+        <h1>Nicólli Gomes de Ramos</h1>
+        <p class="Cabecalho-subtitulo">Analista e Desenvolvedora Front End</p>
+    </main>
+
+    <!-- SOBRE MIM -->
+    <section id="SobreMim" class="SobreMim">
+        <h2 class="Sobre-titulo">Sobre Mim</h2>
+        <div class="Sobre-caixa">
+            <p class="Sobre-paragrafo">
+                👋 Olá, sou a Nicólli Gomes, tenho 22 anos e sou apaixonada por tecnologia. 🚀<br>
+                Desde a minha adolescência, venho me apaixonando cada vez mais por tudo que envolve o universo da
+                programação e da tecnologia. Estou sempre buscando me aprimorar e aprender novas linguagens de
+                programação.<br><br>
+
+                💻 Atuo como Analista e Desenvolvedora Front End, com experiência em HTML, CSS, JavaScript, Python e
+                outras ferramentas do mundo da tecnologia.<br><br>
+
+                🚀 Atualmente, meu foco está em melhorar minhas habilidades em design responsivo e desenvolvimento de
+                interfaces de usuário mais acessíveis e funcionais.<br><br>
+
+                🌟 Estou sempre em busca de novos desafios, projetos e oportunidades que me permitam crescer como
+                profissional e contribuir para a construção de soluções inovadoras.<br><br>
+
+                📧 Você pode me contatar por e-mail: <a href="mailto:1132047@atitus.edu.br">1132047@atitus.edu.br</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="Skills" class="SobreMim">
+        <h2 class="Sobre-titulo">💡 Skills</h2>
+        <div class="Sobre-caixa">
+            <div class="Skills">
+                <div class="Skill-box">✔️ Python</div>
+                <div class="Skill-box">✔️ HTML</div>
+                <div class="Skill-box">✔️ CSS</div>
+                <div class="Skill-box">✔️ JavaScript</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJETOS -->
+    <section id="Projetos" class="Projetos">
+        <h2 class="Projetos-titulos">Projetos</h2>
+        <div class="Projeto-caixa">
+
+            <div class="Projeto-card">
+                <img src="./img/calculadora.png" alt="Projeto Calculadora" class="Projeto-imagem">
+                <div class="Caixa-textos-projetos">
+                    <h3 class="Info-projetos">🧮 Calculadora Básica</h3>
+                    <p class="Paragrafo-projeto">Criei uma calculadora funcional em Python com interface simples e
+                        intuitiva.</p>
+                </div>
+            </div>
+
+            <div class="Projeto-card">
+                <img src="./img/lista.avif" alt="Projeto Lista de Tarefas" class="Projeto-imagem">
+                <div class="Caixa-textos-projetos">
+                    <h3 class="Info-projetos">📝 Lista de Tarefas</h3>
+                    <p class="Paragrafo-projeto">Aplicação para organização de tarefas diárias, com sistema de marcação.
+                    </p>
+                </div>
+            </div>
+
+            <div class="Projeto-card">
+                <img src="./img/cronômetro.png" alt="Projeto Cronômetro" class="Projeto-imagem">
+                <div class="Caixa-textos-projetos">
+                    <h3 class="Info-projetos">⏱️ Cronômetro Online</h3>
+                    <p class="Paragrafo-projeto">Criei um cronômetro funcional utilizando JavaScript e design
+                        responsivo.</p>
+                </div>
+            </div>
+
+            <div class="Projeto-card">
+                <img src="./img/clima.jpg" alt="Projeto Previsão do Tempo" class="Projeto-imagem">
+                <div class="Caixa-textos-projetos">
+                    <h3 class="Info-projetos">🌦️ App de Clima</h3>
+                    <p class="Paragrafo-projeto">Aplicativo que mostra a previsão do tempo em tempo real com consumo de
+                        API.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="Contatos" class="Contatos">
+        <h2 class="Contatos-titulo">Entre em Contato</h2>
+        <form class="Formulario-contatos" id="Formulario" onsubmit="Enviarwhats(event)">
+            <div class="Grupo-form">
+                <input type="text" placeholder="Nome" class="Campo-form" id="Nome" required>
+            </div>
+            <div class="Grupo-form">
+                <textarea name="mensagem" class="Campo-form" placeholder="Digite sua Mensagem" rows="4" id="Mensagem"
+                    required></textarea>
+            </div>
+            <button type="submit" class="Botao-form">Enviar WhatsApp</button>
+        </form>
+    </section>
+
+    <!-- SCRIPT CORRIGIDO -->
+    <script>
+        function Enviarwhats(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('Nome').value;
+            const mensagem = document.getElementById('Mensagem').value;
+            const telefone = '5554999956096';
+
+            const texto = `Olá! Me chamo ${nome}, ${mensagem}`;
+            const msgFormatada = encodeURIComponent(texto);
+            const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
+
+            window.open(url, '_blank');
+        }
+    </script>
+
+</body>
+
+</html>
